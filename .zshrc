@@ -46,7 +46,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump)
+#plugins=(git autojump)
 
 # User configuration
 
@@ -84,37 +84,16 @@ alias ll='ls -l'
 #zsh utf-8 'ls -v' display chinese ¬
 alias ls='ls -v'
 
-#alias for the root of ipython notebook
-#alias pynb='ipython notebook --notebook-dir=~/courses/DL_img/hw' 
 
-export GCC_HOME=/usr/local/Cellar/gcc49/4.9.2_1
-export C_INCLUDE_PATH=$C_INCLUDE_PATH:/usr/local/include:$GCC_HOME/include/
-export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/local/include:$GCC_HOME/include/
-#export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.4/:/usr/local/lib/python2.7/
-#export PYTHONPATH=/usr/local/lib/python3.5:/usr/local/bin/python
-#export PYTHONPATH=/usr/local/lib/python3.5
-alias gcc=$GCC_HOME/bin/gcc-4.9
-alias g++=$GCC_HOME/bin/g++-4.9
 alias c++=g++
 alias cc=gcc
 alias vi=vim
 alias ls='ls -v'
-alias sql='psql -h georgia.eng.utah.edu -U cs6530user dvdrental'
-alias course='cd ~/courses/'
-alias ml='cd ~/courses/ml'
-alias vision='cd ~/courses/3d_vision'
-alias sp='cd ~/courses/structured_prediction'
-alias db='cd ~/courses/database'
-alias storm='cd ~/workspace/storm_project'
-alias rake='noglob rake'
+alias cv0='~/_drives/cv0/data/homes/xyu/Projects'
+alias tmp='/projects/CV2/SimulationForLearning/SyntheticHumans/Templates'
+export cv0_root='~/_drives/cv0/data/homes/xyu/Projects'
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$HOME/.rbenv/bin:$PATH"
-#export PATH="/usr/local/opt/opencv3:$PATH"
-export PATH="$PYTHONPATH:$PATH"
 #Virtualenv/VirtualenvWrapper
-#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-#source /usr/local/bin/virtualenvwrapper.sh
 export LC_ALL=en_US.UTF-8 
 export LANG=en_US.UTF-8
 
@@ -130,19 +109,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 eval "$(pyenv virtualenv-init -)"
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-
-# for anaconda
-CONDA_PREFIX="/Users/xiny/tools/anaconda/anaconda2"
-#export PATH="$CONDA_PREFIX/bin:$PATH"
 
 PROMPT="%{$fg[white]%}%n@%{$fg[green]%}%m%{$reset_color%} ${PROMPT}"
-export PATH="/usr/local/opt/opencv@2/bin:$PATH"
-export PATH="/usr/local/opt/opencv@3/bin:$PATH"
 
-
-#for vlfeat
-VLFEAT_ROOT='/Users/xiny/Project/face-reconstruction/face-reconstruction/features/sift/vlfeat-0.9.21'
-export PATH=$VLFEAT_ROOT/bin/maci64:$PATH
-export MANPATH=$VLFEAT_ROOT/src:$MANPATH
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
+. /homes/xyu/Research/software/cdf37_0-dist/bin/definitions.B
